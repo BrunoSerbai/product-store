@@ -1,0 +1,25 @@
+### Get all products
+GET http://localhost:3000/api/products
+
+### Get a single product
+GET http://localhost:3000/api/products/1
+
+### Create a new product
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{"name":"Super Tommy",
+"price":"99.00",
+"image":"https://i.pinimg.com/736x/4d/49/31/4d493166bcee96ea74f9efd55f8b6bd2.jpg"}
+
+### Update a product
+PUT http://localhost:3000/api/products/2
+Content-Type: application/json
+
+{   "name": "Banana Bob",
+    "price": "1.99",
+    "image": "https://static.wikia.nocookie.net/theamazingworldofgumball/images/f/f6/DerpBananas.png/revision/latest/scale-to-width-down/1000?cb=20130920193037"
+}
+
+### Delete a product
+DELETE http://localhost:3000/api/products/1

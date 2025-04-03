@@ -4,7 +4,7 @@ import morgan from "morgan"
 import cors from "cors"
 import dotenv from "dotenv"
 import { sql } from "./config/db.js"
-import { aj } from "./arcjet.js"
+import arcjet from './lib/arcjet.js'
 
 import productRoutes from "./routes/productRoutes.js"
 
@@ -22,7 +22,7 @@ app.use(cors()) // cors is a middleware that enables Cross-Origin Resource Shari
 // Apply Arcjet rate-limit to all routes 
 app.use(async (req,res,nest) => {
   try{
-    const decision = await aj.protect(req, {
+    const decision = await arcjet.protect(req, {
       requested:1 // specifies that a request consumes 1 token
     })
 

@@ -6,14 +6,12 @@ import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="min-h-screen bg-base-200 transition-colors duration-300 ">
-      <h1>Hello World</h1>
+    <div className="min-h-screen bg-base-200 transition-colors duration-300" data-theme="forest">
       <Navbar />
-      <HomePage />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/products" element={<ProductPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
       </Routes>
     </div>
   )
